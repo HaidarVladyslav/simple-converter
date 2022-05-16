@@ -1,0 +1,44 @@
+<main class="main">
+    <!-- Left part of App -->
+    <div class="main-left">
+        <mat-form-field appearance="fill">
+            <mat-label>Currency</mat-label>
+            <mat-select (ngModelChange)="onFirstSelectChange($event)" name="select-first" id="select-first"
+                [(ngModel)]="selectedFirst">
+                <mat-option *ngFor="let opt of convertCurOptions" [value]="opt.option">
+                    {{ opt.option }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Exchange Value</mat-label>
+            <input matInput #Value placeholder="Input value" (input)="checkForNulish($event)"
+                (input)="changeFirstValueInput($event)" type="number" name="first" id="first"
+                [ngModel]="firstValue | shortener" (ngModelChange)="firstValue=$event">
+        </mat-form-field>
+    </div>
+    <!-- Arrow that show the procedure -->
+    <div class="main-arrows">
+        <img src="assets/exchange-arrows-svgrepo-com.svg" alt="arrows">
+    </div>
+    <!-- Right part of App -->
+    <div class="main-right">
+        <mat-form-field appearance="fill">
+            <mat-label>Currency</mat-label>
+            <mat-select (ngModelChange)="onSecondSelectChange($event)" name="select-second" id="select-second"
+                [(ngModel)]="selectedSecond">
+                <mat-option *ngFor="let opt of convertCurOptions" [value]="opt.option">
+                    {{ opt.option }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Exchange Value</mat-label>
+            <input matInput #Value placeholder="Input value" (input)="checkForNulish($event)"
+                (input)="changeSecondValueInput($event)" type="number" name="second" id="second"
+                [ngModel]="secondValue | shortener" (ngModelChange)="secondValue=$event">
+        </mat-form-field>
+    </div>
+</main>

@@ -1,0 +1,22 @@
+.footer {
+    background-color: #ccc;
+    
+    &-content {
+        max-width: 1220px;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.company {
+    color: rgb(105, 79, 124);
+    font-style: oblique;
+}
+
+@media (max-width: 450px) {
+    .footer {
+        & h5 {
+            font-size: 0.75em;
+        }
+    }
+}
